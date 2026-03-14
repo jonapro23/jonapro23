@@ -5,4 +5,4 @@ Backend Software Engineer focused on designing scalable and secure systems using
 
 experience basica with REST APIs, databases mySQL, and clean architecture principles, always aiming for maintainable, testable, and production-ready code.
 
-[![My Skills](https://skillicons.dev/icons?i=java,mysql,maven,git,github,linux,mint,idea)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=java,spring,springboot,mysql,maven,git,github,linux,mint,idea)](https://skillicons.dev)
