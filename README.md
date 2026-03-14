@@ -1,4 +1,4 @@
-## 👨**jonathan freitas**
+## **jonathan freitas**
 ```Software Engineer | Back End```
 
 Backend Software Engineer focused on designing scalable and secure systems using Java,  Spring Boot e injetardependencias utilizano maven.
