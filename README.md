@@ -1,8 +1,8 @@
 ## 👨**jonathan freitas**
 ```Software Engineer | Back End```
 
-I am a **Information Systems** student and passionate about technology. Currently, I am focused on learning and looking for an internship.
+Backend Software Engineer focused on designing scalable and secure systems using Java,  Spring Boot e injetardependencias utilizano maven.
 
-I use programming languages, focusing on Java, using the Spring framework to create Spring Boots projects and adding dependencies using Maven.
+experience basica with REST APIs, databases mySQL, and clean architecture principles, always aiming for maintainable, testable, and production-ready code.
 
-
+[![My Skills](https://skillicons.dev/icons?i=java,mysql,maven,git,github,linux,mint,idea)](https://skillicons.dev)
