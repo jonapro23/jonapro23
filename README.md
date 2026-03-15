@@ -9,12 +9,6 @@ experience basica with REST APIs, databases mySQL, and clean architecture princi
   <source media="(prefers-color-scheme: dark)" srcset="https://github-used-languages.vercel.app/jonapro23?theme=dark">
   <img alt="Most Used Languages'" src="https://github-used-languages.vercel.app/jonapro23">
 </picture>
-```
-
-O serviço `github-used-languages.vercel.app` já puxa os dados reais automaticamente — o problema que estava mostrando Python 69% provavelmente era cache antigo. Tente abrir esse link no navegador para forçar atualização:
-```
-https://github-used-languages.vercel.app/jonapro23
-
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=jonapro23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true">
