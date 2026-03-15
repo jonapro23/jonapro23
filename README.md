@@ -5,6 +5,11 @@ Backend Software Engineer focused on designing scalable and secure systems using
 
 experience basica with REST APIs, databases mySQL, and clean architecture principles, always aiming for maintainable, testable, and production-ready code.
 
+### Linguagens e Foco
+
+<p align="left">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=jonapro23&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" />
+</p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=jonapro23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true">
