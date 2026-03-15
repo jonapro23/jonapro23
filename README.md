@@ -21,10 +21,13 @@
   </tr>
 </table>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-used-languages.vercel.app/jonapro23?theme=dark">
-  <img alt="Most Used Languages'" src="https://github-used-languages.vercel.app/jonapro23">
-</picture>
+## Linguagens e Foco
+
+![Linguagens mais usadas](langs.svg)![Java](https://img.shields.io/badge/Java-65%25-b07219?style=flat-square&labelColor=21262d)
+![Linguagens mais usadas](langs.svg)![Python](https://img.shields.io/badge/Python-18%25-3572A5?style=flat-square&labelColor=21262d)
+![Linguagens mais usadas](langs.svg)![CSS](https://img.shields.io/badge/CSS-6%25-563d7c?style=flat-square&labelColor=21262d)
+![Linguagens mais usadas](langs.svg)![HTML](https://img.shields.io/badge/HTML-6%25-e34c26?style=flat-square&labelColor=21262d)
+![Linguagens mais usadas](langs.svg)![JavaScript](https://img.shields.io/badge/JavaScript-5%25-f1e05a?style=flat-square&labelColor=21262d)
 
 ### Projects & Experience
 - **Java APIs** — REST endpoints built with Spring Boot following clean architecture and best practices
