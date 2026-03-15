@@ -3,16 +3,16 @@
 <table>
   <tr>
     <td width="55%">
-      <h3>Estudante de Sistemas de Informação</h3>
+      <h3>Information Systems Student</h3>
       <p>
-        Focado em <b>Back-End</b> e <b>Arquitetura de Sistemas</b>.<br/>
-        Desenvolvo APIs REST e sistemas escaláveis com <b>Java</b> e
-        <b>Spring Boot</b>, seguindo boas práticas de <b>Clean Architecture</b>.
+        Focused on <b>Back-End</b> and <b>Systems Architecture</b>.<br/>
+        Building REST APIs and scalable systems with <b>Java</b> and
+        <b>Spring Boot</b>, following <b>Clean Architecture</b> principles.
       </p>
       <p>
-        Experiência com injeção de dependências via <b>Maven</b>,
-        bancos de dados relacionais com <b>MySQL</b> e sempre buscando
-        código limpo, testável e pronto para produção.
+        Experience with dependency injection via <b>Maven</b>,
+        relational databases with <b>MySQL</b>, always aiming for
+        maintainable, testable, and production-ready code.
       </p>
     </td>
     <td width="45%">
