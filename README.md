@@ -21,6 +21,11 @@
   </tr>
 </table>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-used-languages.vercel.app/jonapro23?theme=dark">
+  <img alt="Most Used Languages'" src="https://github-used-languages.vercel.app/jonapro23">
+</picture>
+
 ### Projects & Experience
 - **Java APIs** — REST endpoints built with Spring Boot following clean architecture and best practices
 - **Java Games** — desktop game with database integration using Java and MySQL
