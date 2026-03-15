@@ -21,10 +21,13 @@
   </tr>
 </table>
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=jonapro23&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true">
-  <img alt="GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=jonapro23&show_icons=true&theme=default&hide_border=true&include_all_commits=true&count_private=true">
-</picture>
+### Projects & Experience
+- **Java APIs** — REST endpoints built with Spring Boot following clean architecture and best practices
+- **Java Games** — desktop game with database integration using Java and MySQL
+- **Python Automations** — scripts for task automation and productivity, including a bot for IMIP
+- **Spring Boot Study** — dependency injection, Maven configuration and production-ready backend systems
+- **Database Integration** — modeling and queries with MySQL and PostgreSQL
+- **Web Interfaces** — responsive components with HTML, CSS and JavaScript including geolocation maps
 
 ## 🚀 Tecnologias que eu domino
 [![My Skills](https://skillicons.dev/icons?i=java,spring,mysql,maven,git,github,linux,mint,idea)](https://skillicons.dev)
