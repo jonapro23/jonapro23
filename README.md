@@ -35,12 +35,13 @@
 ## 🚀 Technologies I'm proficient in
 [![My Skills](https://skillicons.dev/icons?i=java,spring,mysql,maven,git,github,linux,mint,idea)](https://skillicons.dev)
 
-## Languages ​​and Focus
-![Java](https://img.shields.io/badge/Java-65%25-b07219?style=flat-square&labelColor=21262d)
-![Python](https://img.shields.io/badge/Python-18%25-3572A5?style=flat-square&labelColor=21262d)
-![CSS](https://img.shields.io/badge/CSS-6%25-563d7c?style=flat-square&labelColor=21262d)
-![HTML](https://img.shields.io/badge/HTML-6%25-e34c26?style=flat-square&labelColor=21262d)
-![JavaScript](https://img.shields.io/badge/JavaScript-5%25-f1e05a?style=flat-square&labelColor=21262d)
+## Languages and Focus
+
+![Java](https://img.shields.io/badge/Java-65%25-b07219?style=for-the-badge&labelColor=21262d)
+![Python](https://img.shields.io/badge/Python-18%25-3572A5?style=for-the-badge&labelColor=21262d)
+![CSS](https://img.shields.io/badge/CSS-6%25-563d7c?style=for-the-badge&labelColor=21262d)
+![HTML](https://img.shields.io/badge/HTML-6%25-e34c26?style=for-the-badge&labelColor=21262d)
+![JavaScript](https://img.shields.io/badge/JavaScript-5%25-f1e05a?style=for-the-badge&labelColor=21262d)
 
 ## 🌐 contacts
 
