@@ -27,7 +27,6 @@
 ### Projects & Experience
 - **Java APIs** — REST endpoints built with Spring Boot following clean architecture and best practices
 - **Java Games** — desktop game with database integration using Java and MySQL
-- **Python Automations** — scripts for task automation and productivity, including a bot for IMIP
 - **Spring Boot Study** — dependency injection, Maven configuration and production-ready backend systems
 - **Database Integration** — modeling and queries with MySQL and PostgreSQL
 - **Web Interfaces** — responsive components with HTML, CSS and JavaScript including geolocation maps
