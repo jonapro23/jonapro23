@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonathan Freitas (jonapro23) | Engenheiro de Software Back-end</title>
+  <meta name="description"
+    content="Portfólio de Jonathan Freitas (jonapro23), engenheiro de software e estudante de Sistemas de Informação em Recife, focado em back-end com Java, Spring Boot e MySQL.">
+  <style>
+    /* Tema claro (padrão) — paleta https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373 */
+    :root {
+      --cor-fundo: #fefae0;
+      --cor-fundo-alt: #faedcd;
+      --cor-cartao: #e9edc9;
+      --cor-borda: #ccd5ae;
+      --cor-texto: #4a3222;
+      --cor-texto-suave: #7a6a53;
+      --cor-acento-primario: #d4a373;
+      --cor-acento-secundario: #ccd5ae;
+      --cor-rodape-fundo: #4a3222;
+      --cor-rodape-texto: #fefae0;
+      --espaco-padrao: 40px;
+    }
+
+    /* Tema escuro — paleta https://coolors.co/palette/0466c8-0353a4-023e7d-002855-001845-001233-33415c-5c677d-7d8597-979dac */
+    [data-tema="escuro"] {
+      --cor-fundo: #001233;
+      --cor-fundo-alt: #001845;
+      --cor-cartao: #002855;
+      --cor-borda: #33415c;
+      --cor-texto: #979dac;
+      --cor-texto-suave: #7d8597;
+      --cor-acento-primario: #0466c8;
+      --cor-acento-secundario: #0353a4;
+      --cor-rodape-fundo: #001233;
+      --cor-rodape-texto: #979dac;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: var(--cor-acento-primario);
+      color: #fff;
+      padding: 10px 16px;
+      z-index: 100;
+    }
+
+    .skip-link:focus {
+      left: 10px;
+      top: 10px;
+    }
+
+    .secao {
+      padding: var(--espaco-padrao);
+    }
+
+    .titulo-secao {
+      font-size: 28px;
+      color: var(--cor-acento-primario);
+      margin-bottom: 24px;
+    }
+
+    .cartao {
+      background: var(--cor-cartao);
+      border: 1px solid var(--cor-borda);
+      border-radius: 8px;
+      padding: 20px;
+      transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .botao {
+      display: inline-block;
+      background: var(--cor-acento-primario);
+      color: #fff;
+      padding: 10px 22px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 15px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .botao:hover,
+    .botao:focus-visible {
+      opacity: 0.85;
+    }
+
+    .botao:focus-visible {
+      outline: 3px solid var(--cor-acento-secundario);
+      outline-offset: 2px;
+    }
+
+    .botao--secundario {
+      background: var(--cor-acento-secundario);
+      color: var(--cor-texto);
+    }
+
+    /* Cabeçalho */
+    .cabecalho {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--cor-fundo-alt);
+      padding: 16px var(--espaco-padrao);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      transition: background-color 0.3s ease;
+    }
+
+    .cabecalho__logo {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--cor-texto);
+      line-height: 1.3;
+    }
+
+    .cabecalho__cargo {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      font-weight: normal;
+      color: var(--cor-texto-suave);
+    }
+
+    .navegacao {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .navegacao__lista {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navegacao__link {
+      background: var(--cor-cartao);
+      border: 1px solid var(--cor-borda);
+      border-radius: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--cor-texto);
+      font-weight: bold;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .navegacao__link:hover,
+    .navegacao__link:focus-visible {
+      background: var(--cor-acento-primario);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .seletor-idioma {
+      position: relative;
+    }
+
+    .botao-idioma {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--cor-borda);
+      background: var(--cor-cartao);
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .botao-idioma:hover,
+    .botao-idioma:focus-visible {
+      transform: translateY(-2px);
+    }
+
+    .botao-idioma:focus-visible {
+      outline: 3px solid var(--cor-acento-primario);
+      outline-offset: 2px;
+    }
+
+    .menu-idioma {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      background: var(--cor-cartao);
+      border: 1px solid var(--cor-borda);
+      border-radius: 10px;
+      padding: 6px;
+      min-width: 130px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      z-index: 20;
+    }
+
+    .menu-idioma.aberto {
+      display: block;
+    }
+
+    .menu-idioma__opcao {
+      width: 100%;
+      text-align: left;
+      background: none;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--cor-texto);
+    }
+
+    .menu-idioma__opcao:hover,
+    .menu-idioma__opcao:focus-visible {
+      background: var(--cor-acento-primario);
+      color: #fff;
+    }
+
+    .botao-tema {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--cor-borda);
+      background: var(--cor-cartao);
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .botao-tema:focus-visible {
+      outline: 3px solid var(--cor-acento-primario);
+      outline-offset: 2px;
+    }
+
+    /* Hero */
+    .heroi {
+      text-align: center;
+      padding-top: 70px;
+      padding-bottom: 60px;
+    }
+
+    .heroi__foto {
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 4px solid var(--cor-acento-primario);
+    }
+
+    .heroi__cargo {
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--cor-acento-primario);
+      font-weight: bold;
+      margin-top: 16px;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin: 8px 0 0;
+    }
+
+    .heroi__descricao {
+      font-size: 18px;
+      color: var(--cor-texto-suave);
+      margin-top: 14px;
+      max-width: 620px;
+      margin-inline: auto;
+    }
+
+    .heroi__acoes {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .heroi__redes {
+      margin-top: 24px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .heroi__redes a {
+      color: var(--cor-texto);
+      text-decoration: none;
+      font-size: 14px;
+      border-bottom: 1px solid var(--cor-borda);
+    }
+
+    .heroi__redes a:hover,
+    .heroi__redes a:focus-visible {
+      color: var(--cor-acento-primario);
+    }
+
+    /* Estatísticas do GitHub */
+    .estatisticas {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .estatisticas__item {
+      text-align: center;
+    }
+
+    .estatisticas__numero {
+      display: block;
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--cor-acento-primario);
+    }
+
+    .estatisticas__rotulo {
+      font-size: 13px;
+      color: var(--cor-texto-suave);
+    }
+
+    /* Sobre */
+    .sobre__texto {
+      color: var(--cor-texto);
+      max-width: 720px;
+    }
+
+    /* Skills */
+    .skills__lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .skills__item {
+      background: var(--cor-cartao);
+      border: 1px solid var(--cor-borda);
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    /* Grade de cartões */
+    .grade {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .projeto {
+      width: 270px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .projeto:hover {
+      transform: translateY(-4px);
+    }
+
+    .projeto__titulo {
+      font-weight: bold;
+      margin: 0 0 8px;
+    }
+
+    .projeto__descricao {
+      font-size: 14px;
+      color: var(--cor-texto-suave);
+      flex-grow: 1;
+    }
+
+    .projeto__badge {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--cor-acento-primario);
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .projeto__link {
+      margin-top: 14px;
+      align-self: flex-start;
+      text-decoration: none;
+    }
+
+    /* Qualificações */
+    .qualificacao {
+      margin-bottom: 12px;
+    }
+
+    .qualificacao__periodo {
+      font-size: 13px;
+      color: var(--cor-texto-suave);
+      margin-top: 4px;
+    }
+
+    /* Rodapé */
+    .rodape {
+      background: var(--cor-rodape-fundo);
+      color: var(--cor-rodape-texto);
+      padding: 40px var(--espaco-padrao) 30px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .rodape__topo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .rodape__nome {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0;
+      color: var(--cor-rodape-texto);
+    }
+
+    .rodape__cargo {
+      margin: 4px 0 0;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .rodape__icones {
+      display: flex;
+      gap: 12px;
+    }
+
+    .rodape__icone {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--cor-borda);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cor-rodape-texto);
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .rodape__icone:hover,
+    .rodape__icone:focus-visible {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .rodape__divisor {
+      border-top: 1px solid var(--cor-borda);
+      margin: 30px 0 20px;
+    }
+
+    .rodape__baixo {
+      text-align: center;
+      font-size: 13px;
+      opacity: 0.75;
+    }
+
+    .rodape__baixo p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 500px) {
+      .rodape__topo {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .cabecalho {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .navegacao {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .navegacao__lista {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__logo">
+      Jonathan Freitas
+      <div class="cabecalho__cargo" data-i18n="hero_cargo">Software Engineer · Back-End</div>
+    </div>
+    <div class="navegacao">
+      <nav aria-label="Navegação principal">
+        <ul class="navegacao__lista">
+          <li><button class="navegacao__link" data-alvo="hero" data-i18n="nav_inicio">Início</button></li>
+          <li><button class="navegacao__link" data-alvo="sobre" data-i18n="nav_sobre">Sobre</button></li>
+          <li><button class="navegacao__link" data-alvo="skills" data-i18n="nav_skills">Skills</button></li>
+          <li><button class="navegacao__link" data-alvo="projetos" data-i18n="nav_projetos">Projetos</button></li>
+          <li><button class="navegacao__link" data-alvo="quali" data-i18n="nav_quali">Qualificações</button></li>
+          <li class="seletor-idioma">
+            <button class="botao-idioma" id="botaoIdioma" type="button" aria-haspopup="true" aria-expanded="false"
+              aria-label="Selecionar idioma">🌐</button>
+            <div class="menu-idioma" id="menuIdioma" role="menu">
+              <button class="menu-idioma__opcao" type="button" role="menuitem" data-idioma="pt">Português</button>
+              <button class="menu-idioma__opcao" type="button" role="menuitem" data-idioma="en">English</button>
+              <button class="menu-idioma__opcao" type="button" role="menuitem" data-idioma="es">Español</button>
+            </div>
+          </li>
+          <li><button class="botao-tema" id="botaoTema" type="button" aria-pressed="false"
+              aria-label="Alternar para tema escuro">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- HERO -->
+    <section id="hero" class="secao heroi" aria-label="Apresentação">
+      <img class="heroi__foto" src="https://avatars.githubusercontent.com/u/212283394?v=4" width="130" height="130"
+        alt="Foto de perfil de Jonathan Freitas">
+      <p class="heroi__cargo" data-i18n="hero_cargo">Software Engineer · Back-End</p>
+      <h1>Jonathan Freitas</h1>
+      <p class="heroi__descricao" data-i18n="hero_desc">Estudante de Sistemas de Informação em Recife, focado em
+        back-end e arquitetura de sistemas. Construo APIs REST e sistemas escaláveis com Java e Spring Boot, seguindo
+        princípios de Clean Architecture, sempre em busca de código sustentável e pronto para produção.</p>
+      <div class="heroi__acoes">
+        <button class="botao" data-alvo="projetos" data-i18n="btn_ver_projetos">Ver projetos</button>
+        <a class="botao botao--secundario" href="https://github.com/jonapro23" target="_blank" rel="noopener noreferrer"
+          data-i18n="btn_ver_github">Ver GitHub</a>
+        <a class="botao botao--secundario" href="curriculo-jonathan.pdf" target="_blank" rel="noopener noreferrer"
+          data-i18n="btn_ver_curriculo">Ver Currículo</a>
+      </div>
+      <nav class="heroi__redes" aria-label="Redes sociais">
+        <a href="https://github.com/jonapro23" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/jonathan-freitas-685894352/" target="_blank"
+          rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/jonathan_stz.03/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:jonathanfreitasdecampos@gmail.com">E-mail</a>
+      </nav>
+
+      <div class="estatisticas">
+        <div class="estatisticas__item">
+          <span class="estatisticas__numero">32</span>
+          <span class="estatisticas__rotulo" data-i18n="stat_repos">Repositórios</span>
+        </div>
+        <div class="estatisticas__item">
+          <span class="estatisticas__numero">82</span>
+          <span class="estatisticas__rotulo" data-i18n="stat_stars">Stars</span>
+        </div>
+        <div class="estatisticas__item">
+          <span class="estatisticas__numero">25</span>
+          <span class="estatisticas__rotulo" data-i18n="stat_seguidores">Seguidores</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="secao cartao" aria-labelledby="titulo-sobre"
+      style="margin: 0 var(--espaco-padrao) var(--espaco-padrao);">
+      <h2 id="titulo-sobre" class="titulo-secao" data-i18n="titulo_sobre">Sobre mim</h2>
+      <p class="sobre__texto" data-i18n="sobre_texto">
+        Sou engenheiro de software e estudante de Sistemas de Informação, natural de Recife/PE. Meu foco é back-end
+        e arquitetura de sistemas: construo APIs REST e sistemas escaláveis com Java e Spring Boot, seguindo princípios
+        de Clean Architecture. Tenho experiência com injeção de dependência via Maven e bancos de dados relacionais
+        com MySQL, sempre buscando escrever código sustentável, testável e pronto para produção. Amo tecnologia e
+        aprender a solucionar problemas utilizando ela — por isso mantenho vários projetos próprios para evoluir
+        constantemente meus conhecimentos em linguagens de programação.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="secao" aria-labelledby="titulo-skills">
+      <h2 id="titulo-skills" class="titulo-secao" data-i18n="titulo_skills">Tecnologias</h2>
+      <ul class="skills__lista">
+        <li class="skills__item">Java</li>
+        <li class="skills__item">Spring Boot</li>
+        <li class="skills__item">MySQL</li>
+        <li class="skills__item">PostgreSQL</li>
+        <li class="skills__item">Maven</li>
+        <li class="skills__item">Python</li>
+        <li class="skills__item">HTML</li>
+        <li class="skills__item">CSS</li>
+        <li class="skills__item">JavaScript</li>
+        <li class="skills__item">Git &amp; GitHub</li>
+        <li class="skills__item">Linux</li>
+      </ul>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="secao" aria-labelledby="titulo-projetos">
+      <h2 id="titulo-projetos" class="titulo-secao" data-i18n="titulo_projetos">Projetos</h2>
+      <ul class="grade">
+
+        <li class="cartao projeto">
+          <span class="projeto__badge">Java</span>
+          <h3 class="projeto__titulo">API-java</h3>
+          <p class="projeto__descricao" data-i18n="proj_apijava_desc">API que exibe hora, data e ano em tempo real,
+            criada para praticar consumo e construção de endpoints.</p>
+          <a class="botao projeto__link" href="https://github.com/jonapro23/API-java" target="_blank"
+            rel="noopener noreferrer" data-i18n="btn_ver_no_github">Ver no GitHub</a>
+        </li>
+
+        <li class="cartao projeto">
+          <span class="projeto__badge">Java</span>
+          <h3 class="projeto__titulo">Jogo-java</h3>
+          <p class="projeto__descricao" data-i18n="proj_jogojava_desc">Jogo simples desenvolvido em Java com conexão a
+            banco de dados para persistência de informações.</p>
+          <a class="botao projeto__link" href="https://github.com/jonapro23/Jogo-java" target="_blank"
+            rel="noopener noreferrer" data-i18n="btn_ver_no_github">Ver no GitHub</a>
+        </li>
+
+        <li class="cartao projeto">
+          <span class="projeto__badge">Java</span>
+          <h3 class="projeto__titulo">QuickStore (4º Período)</h3>
+          <p class="projeto__descricao" data-i18n="proj_quickstore_desc">Projeto da disciplina de back-end do 4º período
+            do bacharelado em Sistemas de Informação.</p>
+          <a class="botao projeto__link" href="https://github.com/jonapro23/QuickStore_4P_Bacharelado" target="_blank"
+            rel="noopener noreferrer" data-i18n="btn_ver_no_github">Ver no GitHub</a>
+        </li>
+
+        <li class="cartao projeto">
+          <span class="projeto__badge">Python</span>
+          <h3 class="projeto__titulo">Bot-IMIP</h3>
+          <p class="projeto__descricao" data-i18n="proj_botimip_desc">Bot desenvolvido em Python para automatizar
+            tarefas e agilizar processos do dia a dia.</p>
+          <a class="botao projeto__link" href="https://github.com/jonapro23/Bot-IMIP" target="_blank"
+            rel="noopener noreferrer" data-i18n="btn_ver_no_github">Ver no GitHub</a>
+        </li>
+
+        <li class="cartao projeto">
+          <span class="projeto__badge">Python</span>
+          <h3 class="projeto__titulo">Projeto-Python</h3>
+          <p class="projeto__descricao" data-i18n="proj_projetopython_desc">Estudos e experimentações em Python, usados
+            para reforçar lógica de programação e boas práticas.</p>
+          <a class="botao projeto__link" href="https://github.com/jonapro23/Projeto-Python" target="_blank"
+            rel="noopener noreferrer" data-i18n="btn_ver_no_github">Ver no GitHub</a>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- QUALIFICACOES -->
+    <section id="quali" class="secao" aria-labelledby="titulo-quali"
+      style="background: var(--cor-fundo-alt); transition: background-color .3s ease;">
+      <h2 id="titulo-quali" class="titulo-secao" data-i18n="titulo_quali">Qualificações</h2>
+
+      <div class="cartao qualificacao">
+        <strong data-i18n="quali_bacharel_titulo">Bacharelado em Sistemas de Informação — 4º período, em
+          andamento</strong>
+        <div class="qualificacao__periodo" data-i18n="quali_bacharel_desc">Foco em back-end, arquitetura de sistemas e
+          desenvolvimento com Java.</div>
+      </div>
+      <div class="cartao qualificacao">
+        <strong data-i18n="quali_dio_cloud_titulo">Bootcamp Java pela DIO e Cloud pela Accenture</strong>
+        <div class="qualificacao__periodo" data-i18n="quali_dio_cloud_desc">Formação prática em desenvolvimento Java e
+          fundamentos de computação em nuvem.</div>
+      </div>
+      <div class="cartao qualificacao">
+        <strong data-i18n="quali_dio_qa_titulo">Bootcamp Java pela DIO e QA pelo Bradesco</strong>
+        <div class="qualificacao__periodo" data-i18n="quali_dio_qa_desc">Formação prática em desenvolvimento Java e
+          fundamentos de qualidade de software (QA).</div>
+      </div>
+      <div class="cartao qualificacao">
+        <strong data-i18n="quali_dio_ai_titulo">Bootcamp Java + AI pela DIO e Itaú — em andamento</strong>
+        <div class="qualificacao__periodo" data-i18n="quali_dio_ai_desc">Formação prática em desenvolvimento Java com
+          aplicação de Inteligência Artificial.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__topo">
+      <div class="rodape__marca">
+        <p class="rodape__nome">Jonathan Freitas</p>
+        <p class="rodape__cargo" data-i18n="hero_cargo">Software Engineer · Back-End</p>
+      </div>
+      <div class="rodape__icones">
+        <a class="rodape__icone" href="https://github.com/jonapro23" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" />
+          </svg>
+        </a>
+        <a class="rodape__icone" href="https://www.linkedin.com/in/jonathan-freitas-685894352/" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8Z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a class="rodape__icone" href="https://www.instagram.com/jonathan_stz.03/" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="1" />
+          </svg>
+        </a>
+        <a class="rodape__icone" href="mailto:jonathanfreitasdecampos@gmail.com" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m2 6 10 7 10-7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="rodape__divisor"></div>
+    <div class="rodape__baixo">
+      <p data-i18n="rodape_feito">Desenvolvido com HTML, CSS e JavaScript</p>
+      <p>Copyright © <span id="anoAtual"></span> Jonathan Freitas</p>
+    </div>
+  </footer>
+
+  <!-- GSAP para animações sutis de entrada nas seções -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script>
+    // Rola suavemente até a seção indicada
+    function irPara(idSecao) {
+      var elemento = document.getElementById(idSecao);
+      if (elemento) {
+        elemento.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    document.querySelectorAll('[data-alvo]').forEach(function (botao) {
+      botao.addEventListener('click', function () {
+        irPara(botao.getAttribute('data-alvo'));
+      });
+    });
+
+    // Alternância de tema claro/escuro, com preferência salva no navegador
+    var botaoTema = document.getElementById('botaoTema');
+
+    function aplicarTema(tema) {
+      document.documentElement.setAttribute('data-tema', tema);
+      localStorage.setItem('tema-preferido', tema);
+      var escuro = tema === 'escuro';
+      botaoTema.setAttribute('aria-pressed', String(escuro));
+      var textos = {
+        pt: escuro ? 'Alternar para tema claro' : 'Alternar para tema escuro',
+        en: escuro ? 'Switch to light theme' : 'Switch to dark theme',
+        es: escuro ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'
+      };
+      botaoTema.setAttribute('aria-label', textos[idiomaAtual] || textos.pt);
+      // Tema escuro = símbolo de lua | tema claro = símbolo de sol
+      botaoTema.textContent = escuro ? '🌙' : '☀️';
+    }
+
+    var temaSalvo = localStorage.getItem('tema-preferido') || 'claro';
+    aplicarTema(temaSalvo);
+
+    botaoTema.addEventListener('click', function () {
+      var atual = document.documentElement.getAttribute('data-tema');
+      aplicarTema(atual === 'escuro' ? 'claro' : 'escuro');
+    });
+
+    // Traduções do site (Português, Inglês, Espanhol)
+    var traducoes = {
+      pt: {
+        nav_inicio: 'Início', nav_sobre: 'Sobre', nav_skills: 'Skills', nav_projetos: 'Projetos',
+        nav_quali: 'Qualificações', nav_contato: 'Contato',
+        hero_cargo: 'Software Engineer · Back-End',
+        hero_desc: 'Estudante de Sistemas de Informação em Recife, focado em back-end e arquitetura de sistemas. Construo APIs REST e sistemas escaláveis com Java e Spring Boot, seguindo princípios de Clean Architecture, sempre em busca de código sustentável e pronto para produção.',
+        btn_ver_projetos: 'Ver projetos', btn_ver_github: 'Ver GitHub', btn_ver_curriculo: 'Ver Currículo',
+        stat_repos: 'Repositórios', stat_stars: 'Stars', stat_seguidores: 'Seguidores',
+        titulo_sobre: 'Sobre mim',
+        sobre_texto: 'Sou engenheiro de software e estudante de Sistemas de Informação, natural de Recife/PE. Meu foco é back-end e arquitetura de sistemas: construo APIs REST e sistemas escaláveis com Java e Spring Boot, seguindo princípios de Clean Architecture. Tenho experiência com injeção de dependência via Maven e bancos de dados relacionais com MySQL, sempre buscando escrever código sustentável, testável e pronto para produção. Amo tecnologia e aprender a solucionar problemas utilizando ela — por isso mantenho vários projetos próprios para evoluir constantemente meus conhecimentos em linguagens de programação.',
+        titulo_skills: 'Tecnologias',
+        titulo_projetos: 'Projetos',
+        proj_apijava_desc: 'API que exibe hora, data e ano em tempo real, criada para praticar consumo e construção de endpoints.',
+        proj_jogojava_desc: 'Jogo simples desenvolvido em Java com conexão a banco de dados para persistência de informações.',
+        proj_quickstore_desc: 'Projeto da disciplina de back-end do 4º período do bacharelado em Sistemas de Informação.',
+        proj_botimip_desc: 'Bot desenvolvido em Python para automatizar tarefas e agilizar processos do dia a dia.',
+        proj_projetopython_desc: 'Estudos e experimentações em Python, usados para reforçar lógica de programação e boas práticas.',
+        btn_ver_no_github: 'Ver no GitHub',
+        titulo_quali: 'Qualificações',
+        quali_bacharel_titulo: 'Bacharelado em Sistemas de Informação — 4º período, em andamento',
+        quali_bacharel_desc: 'Foco em back-end, arquitetura de sistemas e desenvolvimento com Java.',
+        quali_dio_cloud_titulo: 'Bootcamp Java pela DIO e Cloud pela Accenture',
+        quali_dio_cloud_desc: 'Formação prática em desenvolvimento Java e fundamentos de computação em nuvem.',
+        quali_dio_qa_titulo: 'Bootcamp Java pela DIO e QA pelo Bradesco',
+        quali_dio_qa_desc: 'Formação prática em desenvolvimento Java e fundamentos de qualidade de software (QA).',
+        quali_dio_ai_titulo: 'Bootcamp Java + AI pela DIO e Itaú — em andamento',
+        quali_dio_ai_desc: 'Formação prática em desenvolvimento Java com aplicação de Inteligência Artificial.',
+        titulo_contato: 'Fale comigo',
+        form_nome: 'Nome', form_email: 'E-mail', form_mensagem: 'Mensagem', btn_enviar: 'Enviar',
+        contato_localizacao: '📍 Recife, Brasil',
+        rodape_direitos: 'Todos os direitos reservados.'
+      },
+      en: {
+        nav_inicio: 'Home', nav_sobre: 'About', nav_skills: 'Skills', nav_projetos: 'Projects',
+        nav_quali: 'Qualifications', nav_contato: 'Contact',
+        hero_cargo: 'Software Engineer · Back-End',
+        hero_desc: 'Information Systems student in Recife, Brazil, focused on back-end and systems architecture. I build REST APIs and scalable systems with Java and Spring Boot, following Clean Architecture principles, always aiming for maintainable, production-ready code.',
+        btn_ver_projetos: 'View projects', btn_ver_github: 'View GitHub', btn_ver_curriculo: 'View Resume',
+        stat_repos: 'Repositories', stat_stars: 'Stars', stat_seguidores: 'Followers',
+        titulo_sobre: 'About me',
+        sobre_texto: 'I am a software engineer and Information Systems student from Recife, Brazil. My focus is back-end and systems architecture: I build REST APIs and scalable systems with Java and Spring Boot, following Clean Architecture principles. I have experience with dependency injection via Maven and relational databases with MySQL, always aiming for maintainable, testable, production-ready code. I love technology and learning how to solve problems with it — that is why I keep several personal projects to constantly improve my programming skills.',
+        titulo_skills: 'Technologies',
+        titulo_projetos: 'Projects',
+        proj_apijava_desc: 'API that displays the current time, date and year, built to practice creating and consuming endpoints.',
+        proj_jogojava_desc: 'Simple Java game with database integration for data persistence.',
+        proj_quickstore_desc: 'Back-end course project from the 4th term of the Information Systems degree.',
+        proj_botimip_desc: 'Python bot built to automate tasks and speed up everyday processes.',
+        proj_projetopython_desc: 'Python studies and experiments used to strengthen programming logic and best practices.',
+        btn_ver_no_github: 'View on GitHub',
+        titulo_quali: 'Qualifications',
+        quali_bacharel_titulo: 'Bachelor\'s in Information Systems — 4th term, in progress',
+        quali_bacharel_desc: 'Focus on back-end, systems architecture and Java development.',
+        quali_dio_cloud_titulo: 'Java Bootcamp by DIO and Cloud by Accenture',
+        quali_dio_cloud_desc: 'Hands-on training in Java development and cloud computing fundamentals.',
+        quali_dio_qa_titulo: 'Java Bootcamp by DIO and QA by Bradesco',
+        quali_dio_qa_desc: 'Hands-on training in Java development and software quality assurance (QA) fundamentals.',
+        quali_dio_ai_titulo: 'Java + AI Bootcamp by DIO and Itaú — in progress',
+        quali_dio_ai_desc: 'Hands-on training in Java development applying Artificial Intelligence.',
+        titulo_contato: 'Get in touch',
+        form_nome: 'Name', form_email: 'Email', form_mensagem: 'Message', btn_enviar: 'Send',
+        contato_localizacao: '📍 Recife, Brazil',
+        rodape_direitos: 'All rights reserved.'
+      },
+      es: {
+        nav_inicio: 'Inicio', nav_sobre: 'Sobre mí', nav_skills: 'Skills', nav_projetos: 'Proyectos',
+        nav_quali: 'Calificaciones', nav_contato: 'Contacto',
+        hero_cargo: 'Software Engineer · Back-End',
+        hero_desc: 'Estudiante de Sistemas de Información en Recife, Brasil, enfocado en back-end y arquitectura de sistemas. Construyo APIs REST y sistemas escalables con Java y Spring Boot, siguiendo principios de Clean Architecture, siempre buscando código mantenible y listo para producción.',
+        btn_ver_projetos: 'Ver proyectos', btn_ver_github: 'Ver GitHub', btn_ver_curriculo: 'Ver Currículum',
+        stat_repos: 'Repositorios', stat_stars: 'Stars', stat_seguidores: 'Seguidores',
+        titulo_sobre: 'Sobre mí',
+        sobre_texto: 'Soy ingeniero de software y estudiante de Sistemas de Información, de Recife, Brasil. Mi enfoque es back-end y arquitectura de sistemas: construyo APIs REST y sistemas escalables con Java y Spring Boot, siguiendo principios de Clean Architecture. Tengo experiencia con inyección de dependencias vía Maven y bases de datos relacionales con MySQL, siempre buscando escribir código mantenible, testeable y listo para producción. Amo la tecnología y aprender a resolver problemas con ella — por eso mantengo varios proyectos propios para mejorar constantemente mis conocimientos en lenguajes de programación.',
+        titulo_skills: 'Tecnologías',
+        titulo_projetos: 'Proyectos',
+        proj_apijava_desc: 'API que muestra la hora, fecha y año en tiempo real, creada para practicar la creación y el consumo de endpoints.',
+        proj_jogojava_desc: 'Juego simple desarrollado en Java con conexión a base de datos para la persistencia de información.',
+        proj_quickstore_desc: 'Proyecto de la asignatura de back-end del 4º período de la carrera de Sistemas de Información.',
+        proj_botimip_desc: 'Bot desarrollado en Python para automatizar tareas y agilizar procesos diarios.',
+        proj_projetopython_desc: 'Estudios y experimentos en Python, usados para reforzar la lógica de programación y las buenas prácticas.',
+        btn_ver_no_github: 'Ver en GitHub',
+        titulo_quali: 'Calificaciones',
+        quali_bacharel_titulo: 'Licenciatura en Sistemas de Información — 4º período, en curso',
+        quali_bacharel_desc: 'Enfoque en back-end, arquitectura de sistemas y desarrollo con Java.',
+        quali_dio_cloud_titulo: 'Bootcamp de Java por DIO y Cloud por Accenture',
+        quali_dio_cloud_desc: 'Formación práctica en desarrollo Java y fundamentos de computación en la nube.',
+        quali_dio_qa_titulo: 'Bootcamp de Java por DIO y QA por Bradesco',
+        quali_dio_qa_desc: 'Formación práctica en desarrollo Java y fundamentos de calidad de software (QA).',
+        quali_dio_ai_titulo: 'Bootcamp de Java + AI por DIO e Itaú — en curso',
+        quali_dio_ai_desc: 'Formación práctica en desarrollo Java aplicando Inteligencia Artificial.',
+        titulo_contato: 'Hablemos',
+        form_nome: 'Nombre', form_email: 'Correo electrónico', form_mensagem: 'Mensaje', btn_enviar: 'Enviar',
+        contato_localizacao: '📍 Recife, Brasil',
+        rodape_direitos: 'Todos los derechos reservados.'
+      }
+    };
+
+    var idiomaAtual = localStorage.getItem('idioma-preferido') || 'pt';
+
+    function aplicarIdioma(idioma) {
+      var dicionario = traducoes[idioma] || traducoes.pt;
+      document.querySelectorAll('[data-i18n]').forEach(function (elemento) {
+        var chave = elemento.getAttribute('data-i18n');
+        if (dicionario[chave]) {
+          elemento.textContent = dicionario[chave];
+        }
+      });
+      document.documentElement.setAttribute('lang', idioma === 'pt' ? 'pt-BR' : idioma);
+      idiomaAtual = idioma;
+      localStorage.setItem('idioma-preferido', idioma);
+      aplicarTema(document.documentElement.getAttribute('data-tema')); // atualiza aria-label no idioma certo
+    }
+
+    aplicarIdioma(idiomaAtual);
+
+    // Menu de seleção de idioma
+    var botaoIdioma = document.getElementById('botaoIdioma');
+    var menuIdioma = document.getElementById('menuIdioma');
+
+    botaoIdioma.addEventListener('click', function (evento) {
+      evento.stopPropagation();
+      var aberto = menuIdioma.classList.toggle('aberto');
+      botaoIdioma.setAttribute('aria-expanded', String(aberto));
+    });
+
+    document.querySelectorAll('.menu-idioma__opcao').forEach(function (opcao) {
+      opcao.addEventListener('click', function () {
+        aplicarIdioma(opcao.getAttribute('data-idioma'));
+        menuIdioma.classList.remove('aberto');
+        botaoIdioma.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function () {
+      menuIdioma.classList.remove('aberto');
+      botaoIdioma.setAttribute('aria-expanded', 'false');
+    });
+
+    // Ano atual no rodapé
+    document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
+    // Animações de entrada ao rolar a página
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      document.querySelectorAll('main > section').forEach(function (secao) {
+        gsap.from(secao, {
+          opacity: 0,
+          y: 30,
+          duration: 0.6,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: secao,
+            start: 'top 85%'
+          }
+        });
+      });
+    }
+  </script>
+
+</body>
+
+</html>
